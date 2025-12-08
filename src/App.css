@@ -1,0 +1,301 @@
+/* === STYLE GOUACHE / AESTHETIC === */
+/* Couleurs pastel + brush style */
+:root {
+  --pink: #ff7aa2;
+  --yellow: #ffe66d;
+  --blue: #7ec8e3;
+  --purple: #c9a0ff;
+  --bg: #fdf7f1;
+  --card: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 22px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* === GLOBAL CONTAINERS === */
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  animation: fade 0.8s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === HERO SECTION === */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+  background: linear-gradient(120deg, var(--pink), var(--purple), var(--blue));
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 15px 40px var(--shadow);
+  color: white;
+}
+
+.title {
+  font-size: 90px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 0.9;
+  text-shadow: 4px 4px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.blob {
+  background: var(--yellow);
+  padding: 5px 14px;
+  border-radius: 14px;
+  color: black;
+}
+
+.hero-img {
+  width: 380px;
+  border-radius: 50%;
+  border: 10px solid rgba(255,255,255,0.6);
+  box-shadow: 0 10px 20px var(--shadow);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* === ABOUT SECTION === */
+.about {
+  display: flex;
+  justify-content: center;
+  color: #000000; /* Noir */
+}
+
+.about-card {
+  background: var(--card);
+  width: 85%;            /* avant : 80% */
+  display: flex;
+  padding: 60px;         /* avant : 50px */
+  gap: 60px;             /* avant : 40px */
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.about-photo {
+  width: 380px;         /* tu peux monter jusqu’à 450 si tu veux encore plus grand */
+  height: 380px;
+  border-radius: 35px;
+  object-fit: cover;
+  border: 8px solid var(--pink);
+  box-shadow: 0 12px 30px var(--shadow); /* donne un cadre premium */
+}
+
+
+.about-text h2 {
+  font-size: 40px;
+  margin: 0 0 10px 0;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* === PROJECTS === */
+.projects-title {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 800;
+  color: var(--purple);
+}
+
+.projects-grid {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow);
+  cursor: pointer;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: -5px; /* Remonte légèrement */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px var(--shadow);
+}
+
+.project-icon {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  font-size: 28px;
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.project-desc {
+  margin-top: 14px;
+  font-size: 17px;
+}
+
+/* === MODAL === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade 0.3s ease;
+}
+
+.modal {
+  background: white;
+  width: 60%;
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px var(--shadow);
+}
+
+.gallery {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.gallery-img {
+  width: 45%;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: var(--pink);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px var(--shadow);
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* MODAL POPUP */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fade 0.3s ease;
+}
+
+.modal {
+  background: white;
+  width: 55%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 40px;
+  border-radius: 25px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px 14px;
+  background: var(--pink);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.project-card {
+  position: relative;
+  padding: 20px;
+}
+
+.project-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal p {
+  white-space: pre-line;
+  line-height: 1.5;
+}

@@ -1,0 +1,68 @@
+.projects-section {
+  padding: 40px;
+  background: #faf5f0;
+  color: #222; /* ← GARANTIT que le texte est visible */
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #8e56ff;
+  margin-bottom: 20px;
+}
+
+/* Grille */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  color: #222; /* ← IMPORTANT */
+}
+
+.project-icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/******** MODAL ********/
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  color: #222; /* ← IMPORTANT */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  float: right;
+}
+
+.gallery img {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 8px;
+}
