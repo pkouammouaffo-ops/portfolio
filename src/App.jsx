@@ -3,6 +3,9 @@ import "./App.css";
 import heroImg from "./assets/images/hero.png";
 import aboutPhoto from "./assets/images/about.jpg";
 import icon1 from "./assets/icons/icon1.png";
+import win1 from "./assets/projets/ws1.png";
+import win2 from "./assets/projets/ws2.png";
+import win3 from "./assets/projets/ws3.png";
 
 
 export default function App() {
@@ -29,9 +32,9 @@ export default function App() {
         - Scripts PowerShell pour automatiser les tâches
       `,
       images: [
-        "/images/projects/ws1.png",
-        "/images/projects/ws2.png",
-        "/images/projects/ws3.png"
+        win1,
+        win2,
+        win3
       ],
       skills: [
         "Windows Server 2022",
@@ -110,11 +113,11 @@ export default function App() {
 
               <p className="modal-description">{activeProject.description}</p>
 
-              <div className="modal-gallery">
-                {activeProject.images.map((src, i) => (
-                  <img key={i} src={src} className="modal-img" />
-                ))}
-              </div>
+                  <div className="gallery">
+                    {activeProject.images.map((img, i) => (
+                      <img key={i} src={img} className="gallery-img" />
+                    ))}
+                  </div>
 
               <button className="close-btn" onClick={() => setActiveProject(null)}>
                 Fermer
